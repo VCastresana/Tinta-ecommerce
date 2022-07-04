@@ -1,0 +1,408 @@
+h2 {
+    text-align: center;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: #920605;
+    padding-top: 70px;
+    position: relative; 
+    animation-name: secciones;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: normal; }
+
+    @keyframes secciones {
+        0% {
+          color: #f0e3a5;
+          top: -30px; }
+        50% {
+          color: #f5a051; }
+        100% {
+          color: #920605;
+          top: 0px; } }
+  
+  .textos-contacto, .talles-textos, .textos-informacion {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000; }
+  
+  * {
+    margin: 0;
+    padding: 0; }
+  
+  html {
+    min-height: 100%; }
+  
+  body {
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 40px; }
+ 
+    .cuerpo-barra {
+        display: flex;
+        flex-direction: row;
+        margin-top: 60px;
+        margin-bottom: 50px; }
+      
+      .cuerpo-barra1 {
+        background-color: #f0e3a5;
+        height: 20px;
+        width: 33vw; }
+      
+      .cuerpo-barra2 {
+        background-color: #f5a051;
+        height: 20px;
+        width: 34vw; }
+      
+      .cuerpo-barra3 {
+        background-color: #920605;
+        height: 20px;
+        width: 33vw; }
+  
+  main {
+    min-height: 100%;
+    width: 100%; }
+  
+  .header {
+    position: sticky;
+    top: 0px;
+    z-index: 1000; }
+    .header-barra-color {
+      background-color: #920605;
+      height: 20px;
+      z-index: 998; }
+    .header-logo {
+      width: 10vw;
+      margin-top: 10px; }
+  
+  .navbar {
+    box-shadow: 0px 10px 21px -13px #000000;
+    background-color: white;
+    opacity: 0.9;
+    z-index: 999; }
+    .navbar-toggler {
+      border: none;
+      text-align: left; }
+  
+  .nav-link {
+    list-style: none;
+    font-size: 14px;
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-right: 10px;
+    margin-top: 20px;
+    letter-spacing: 5px; }
+    .nav-link:hover {
+      font-weight: 700;
+      transform: scale(0.9); }
+  
+  .nav-item a {
+    text-align: center; }
+
+
+  
+  .footer {
+    background-color: #920605;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 220px; }
+    .footer-logos {
+      width: 3vw;
+      margin-bottom: 10px; }
+    .footer-text1 {
+      font-family: "Kumbh Sans", sans-serif;
+      color: #000;
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase; }
+    .footer-text2 {
+      font-family: "Kumbh Sans", sans-serif;
+      font-weight: 700;
+      color: #000;
+      font-size: 12px;
+      text-transform: uppercase; }
+    .footer-nav li {
+      list-style: none;
+      font-size: 13px;
+      font-family: "Kumbh Sans", sans-serif;
+      font-weight: 400;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      background-color: #920605;
+      margin-top: 30px;
+      line-height: 10px;
+      letter-spacing: 2px;
+      width: 100%; }
+    .footer a {
+      color: white;
+      text-decoration: none; }
+      .footer a:hover {
+        font-weight: 700;
+        transform: scale(0.9); }
+    .footer ul {
+      padding-left: 0;
+      margin: 0; }
+    .footer-redes {
+      font-size: 12px;
+      font-family: "Kumbh Sans", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: white;
+      margin-top: 20px;
+      letter-spacing: 2px; }
+    .footer-logosRedes {
+      width: 3vw; }
+    .footer-datos {
+      font-size: 12px;
+      font-family: "Kumbh Sans", sans-serif;
+      font-weight: 400;
+      color: white; }
+    .footer-logosContacto {
+      width: 8%; }
+
+      #producto-contenedor {
+        max-width: 70rem;
+        margin: 30px auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        row-gap: 20px;
+        flex-wrap: wrap;
+      }
+
+    .productos-item{
+      width: 250px;
+      margin: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card{
+      border: none;
+      box-shadow: 0px 0px 26px 16px rgba(0,0,0,0.1);
+      border-radius: 5px;
+    }
+
+      .foto-remera {
+        width: 80%;
+        border-radius: 5px; }
+        .foto-remera:hover {
+          transition: 1s;
+          transform: scale(1.05); }
+      
+      .modelo-remera {
+        font-family: "Kumbh Sans", sans-serif;
+        font-weight: 600;
+        color: #000;
+        text-transform: uppercase;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 14px;
+        text-align: center; }
+      
+      .precio {
+        font-size: 16px;
+        font-family: "Kumbh Sans", sans-serif;
+        font-weight: 700;
+        color: #920605;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        text-align: center; }
+      
+      .medio-pagos {
+        font-size: 10px;
+        font-family: "Kumbh Sans", sans-serif;
+        font-weight: 400;
+        color: black;
+        text-transform: uppercase; }
+      
+      .productos-mas {
+        font-size: 18px;
+        font-family: "Kumbh Sans", sans-serif;
+        font-weight: 400;
+        color: #920605;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-top: 100px; }
+
+        @media only screen and (max-width: 900px) {
+            .header-logo {
+              width: 20vw; }
+            h2 {
+              font-size: 40px; }
+            .footer {
+              height: 200px; }
+              .footer-logosRedes {
+                width: 5vw; }
+              .footer-logosContacto {
+                width: 3vw; }
+              .footer-logos {
+                width: 4vw;
+                margin-bottom: 10px; }
+              .footer-redes {
+                width: 100%; }
+              .footer-datos {
+                width: 100%; }
+              .footer ul {
+                margin: 0; }
+            .barra-info {
+              height: 150px; }
+            .textos-informacion {
+              margin-left: 80px;
+              margin-right: 80px; }
+            .foto-remera {
+              width: 90%; }
+            .modeloremera {
+              font-family: "Kumbh Sans", sans-serif;
+              font-weight: 600;
+              color: #000;
+              text-transform: uppercase;
+              margin-top: 8px;
+              margin-bottom: 3px;
+              font-size: 12px;
+              text-align: center; }
+            .precio {
+              font-size: 16px; }
+            .medio-pagos {
+              font-size: 9px;
+              margin-top: 5px;
+              width: auto; }
+            .tablaTalles {
+              width: 25vw; }
+            .talles-textos {
+              font-size: 14px;
+              margin-bottom: 40px; }
+            .talles-textos2 {
+              font-size: 14px;
+              margin-left: 80px;
+              margin-right: 80px; }
+            .tablaTallesRosa {
+              width: 46vw;
+              margin-left: -90px; }
+            .titulo-apertura1 {
+              font-size: 50px;
+              margin-top: 50px; }
+            .titulo-apertura2 {
+              font-size: 50px;
+              margin-top: -10px; }
+            .texto-apertura {
+              font-size: 18px; }
+            .btn {
+              font-size: 14px; }
+            .textos-contacto {
+              width: 90%;
+              margin-left: 0;
+              padding-left: 0; }
+            form {
+              padding-left: 30px;
+              padding-right: 20px; } }
+          
+          @media only screen and (max-width: 500px) {
+            .header-logo {
+              width: 25vw;
+              margin-top: -10px; }
+            .footer {
+              height: 450px; }
+              .footer-redes {
+                font-size: 10px;
+                margin-top: 40px;
+                margin-bottom: 10px; }
+              .footer-logos {
+                width: 6vw; }
+              .footer-logosRedes {
+                width: 8vw; }
+              .footer-logosContacto {
+                width: 6vw; }
+              .footer ul {
+                margin: 0; }
+            .barra-info {
+              height: 280px; }
+            .body-barra1 {
+              height: 150px; }
+            .body-barra2 {
+              height: 150px; }
+            .body-barra3 {
+              height: 150px; }
+            .body-barras {
+              margin-top: -80px;
+              margin-bottom: 0; }
+            .body-titulo-apertura1 {
+              font-size: 25px; }
+            .body-titulo-apertura2 {
+              font-size: 25px; }
+            h2 {
+              font-size: 30px;
+              margin-bottom: 0; }
+            .textos-informacion {
+              font-size: 14px;
+              margin-left: 20px;
+              margin-right: 20px;
+              line-height: 30px; }
+            .foto-remera {
+              width: 70%; }
+            .modeloremera {
+              font-family: "Kumbh Sans", sans-serif;
+              font-weight: 600;
+              color: #000;
+              text-transform: uppercase;
+              margin-top: 8px;
+              margin-bottom: 3px;
+              font-size: 14px;
+              text-align: center; }
+            .precio {
+              font-size: 18px; }
+            .medio-pagos {
+              font-size: 10px;
+              margin-top: 5px;
+              width: auto; }
+            .productos-mas {
+              font-size: 12px;
+              margin-top: 20px; }
+            .tablaTalles {
+              width: 60vw;
+              margin: auto;
+              text-align: center;
+              margin-left: 90px; }
+            .talles-textos {
+              font-size: 14px;
+              margin-bottom: 30px;
+              margin-left: 30px;
+              margin-right: 25px; }
+            .talles-textos2 {
+              font-size: 14px;
+              margin-left: 25px;
+              margin-right: 30px; }
+            .tablaTallesRosa {
+              width: 90vw;
+              margin: auto;
+              margin-top: 20px;
+              margin-left: 30px; }
+            .textos-contacto {
+              font-size: 14px; }
+            .body-titulo-apertura1 {
+              font-size: 50px;
+              margin-top: 30px; }
+            .body-titulo-apertura2 {
+              font-size: 50px;
+              margin-top: -10px; }
+            .body-texto-apertura {
+              font-size: 20px; }
+            .body-texto-apertura-bold {
+              font-size: 20px;
+              margin-top: -10px; }
+            .boton {
+              font-size: 12px; }
+            form {
+              padding-left: 8px;
+              padding-right: 0px; } }
+          
+      
