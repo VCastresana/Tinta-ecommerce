@@ -105,7 +105,33 @@ h2 {
   .nav-item a {
     text-align: center; }
 
+    .icono-carrito{
+      width: 25px;
+      margin-right: 10px;
+    }
+  .boton-carrito{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 400;
+    margin-top: -20px;
+    margin-left: 20px;
+  }
+  .modulo-carrito{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 
+  .texto-carrito{
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
   
   .footer {
     background-color: #920605;
@@ -233,6 +259,155 @@ h2 {
         text-transform: uppercase;
         letter-spacing: 5px;
         margin-top: 100px; }
+
+        .boton-agregarCarrito{
+          background-color: #920605;
+          border-radius: 3px;
+          border: none;
+          width: 150px;
+          height: 30px;
+          cursor: pointer;
+          font-family: "Kumbh Sans", sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          text-transform: uppercase;
+          color: white;
+          letter-spacing: 1px;
+
+        }
+        .modal-contenedor {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.3);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all .5s;
+          opacity: 0;
+          visibility: hidden;
+          z-index: 1000;
+      }
+      .modal-active {
+          opacity: 1;
+          visibility: visible;
+      }
+      .modal-carrito {
+          position: relative;
+          background-color: white;
+          min-width: 500px;
+          padding: 20px;
+          margin-top: -100%;
+          transition: all .5s;
+      }
+      .modal-active .modal-carrito {
+          margin-top: 0;
+      }     
+      .modal-carrito h3 {
+          color:#920605;
+          padding-bottom: 5px;
+      }
+      .modal-carrito #carritoCerrar {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          font-size: 20px;
+          color: #920605;
+          border: none;
+          background-color: white;
+      }
+      .modal-carrito #carritoCerrar:hover {
+          cursor: pointer;
+      }
+      .modal-carrito #carritoCerrar:focus {
+          outline: none;
+      }
+      .modal-carrito .precioProducto {
+          padding-top: 20px;
+          font-family: "Kumbh Sans", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+        text-transform: uppercase;
+
+      }
+      
+      .productoEnCarrito {
+          border-radius: 3px;
+          background-color: #f0e3a5 ;
+          margin: 5px 0;
+          padding: 5px 10px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+      }
+    
+      .productoEnCarrito:hover {
+          border-left: 5px solid #920605 ;
+      }
+      .productoEnCarrito p{
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .modal-carrito h3{
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 25px;
+        font-weight: 400;
+      }
+
+      .boton-agregar {
+        background-color:#920605;
+        color: white;
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        letter-spacing: 2px;
+        width: 180px;
+        height:35px;
+    }
+    .boton-agregar:hover {
+        cursor: pointer;
+    }
+    .boton-agregar:focus {
+        outline: none;
+    }
+      
+      .boton-eliminar {
+          border: none;
+          cursor: pointer;
+          font-family: "Kumbh Sans", sans-serif;
+          font-weight: 400;
+          text-transform: uppercase;
+          width: 50px;
+          height: 50px;
+          background-color:#f0e3a5;
+      }
+      
+      .boton-eliminar:hover {
+          cursor: pointer;
+      }
+      .boton-eliminar:focus {
+          outline: none;
+      }    
+
+    .icono-cerrar{
+      width: 25px;
+    }
+    .icono-basura{
+      width: 15px;
+    }
+    .icono-vaciar{
+      width: 20px;
+    }
+      
+    
+
 
         @media only screen and (max-width: 900px) {
             .header-logo {
@@ -404,5 +579,13 @@ h2 {
             form {
               padding-left: 8px;
               padding-right: 0px; } }
+
+              
+
+
+            
+
+            
+            
           
       

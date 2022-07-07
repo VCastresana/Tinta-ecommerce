@@ -1,4 +1,4 @@
-const productos = [
+const stockProductos = [
     {
         id: 1,
         modelo: "tintas negras",
