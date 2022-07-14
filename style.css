@@ -340,9 +340,8 @@ h2 {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          align-items: center;
-      }
-    
+          align-content: flex-start;
+      } 
       .productoEnCarrito:hover {
           border-left: 5px solid #920605 ;
       }
@@ -350,6 +349,8 @@ h2 {
         font-family: "Kumbh Sans", sans-serif;
         font-size: 12px;
         font-weight: 400;
+        text-transform: capitalize;
+        margin-bottom: 0 ;
       }
       .modal-carrito h3{
         font-family: "Kumbh Sans", sans-serif;
@@ -404,6 +405,48 @@ h2 {
     }
     .icono-vaciar{
       width: 20px;
+    }
+
+    .selectores{
+      margin-bottom: 20px;
+
+    }
+    .selectorColor{
+      font-family: "Kumbh Sans", sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 12px;
+      width: 100px;
+      height: 30px;
+      background-color: #f0e3a5;
+      border: none;
+      border-radius: 3px;
+
+    }
+    .selectorTalle{
+      font-family: "Kumbh Sans", sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 12px;
+      width: 80px;
+      height: 30px;
+      background-color: #f0e3a5;
+      border: none;
+      border-radius: 3px;
+    }
+    .color {
+      font-family: "Kumbh Sans", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+
+    }
+    .talle {
+      font-family: "Kumbh Sans", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+
     }
       
     

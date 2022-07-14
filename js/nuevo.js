@@ -32,8 +32,23 @@ stockProductos.forEach((producto) => {
     <img class="foto-remera" src=${producto.img}>
     <h3 class="modelo-remera">${producto.modelo}</h3>
     <p class="precio">$  ${producto.precio}</p>
-    <p class="medio-pagos">${producto.medioPago}</p>
-    <button id="agregar${producto.id}" class="boton-agregarCarrito">Comprar</button>                            
+    <p class="medio-pagos">${producto.medioPago}</p>    
+    <div class="selectores">
+    <select name="select" class="selectorColor">
+    <option value="value0">Color</option>
+    <option value="value1" class="color"> ${producto.color.NE}</option>
+    <option value="value2" class="color"> ${producto.color.BL}</option>
+    <option value="value3" class="color"> ${producto.color.BO}</option>
+    </select> 
+    <select name="select" class="selectorTalle">
+    <option value="value0">Talle</option>
+    <option value="value1" class="talle">${producto.talle.S}</option>
+    <option value="value2" class="talle">${producto.talle.M}</option>
+    <option value="value3" class="talle">${producto.talle.L}</option>
+    </select> 
+    </div>
+    <button id="agregar${producto.id}" class="boton-agregarCarrito">Comprar</button>   
+                    
 </div>`
 
     contenedorProductos.appendChild(div)
@@ -64,6 +79,7 @@ function agregarAlCarrito(id){
     actualizarCarrito() 
 }
 
+
 const eliminarDelCarrito = (id) => {
     const item = carrito.find((prod) => prod.id === id)
 
@@ -81,9 +97,12 @@ const actualizarCarrito = () => {
         const div = document.createElement('div')
         div.className = ('productoEnCarrito')
         div.innerHTML = `
-        <p>${prod.modelo}</p>
-        <p>Precio:$ ${prod.precio}</p>
-        <p>Cantidad: ${prod.cantidad}</p>
+        
+        <div>
+        <p><b>Modelo:</b> ${prod.modelo}</p>
+        </div>
+        <p><b>Precio:</b> $ ${prod.precio}</p>
+        <p><b>Cantidad:</b> ${prod.cantidad}</p>
         <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><img src="./img/trash-can-solid.png" class="icono-basura"></button>
         `
 
