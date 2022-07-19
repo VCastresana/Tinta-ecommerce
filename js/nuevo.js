@@ -11,19 +11,8 @@ const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
 
+
 let carrito = []
-
-document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('carrito')){
-        carrito = JSON.parse(localStorage.getItem('carrito'))
-        actualizarCarrito()
-    }
-})
-
-botonVaciar.addEventListener('click', () => {
-    carrito.length = 0
-    actualizarCarrito()
-})
 
 stockProductos.forEach((producto) => {
     const div = document.createElement('div')
@@ -34,31 +23,39 @@ stockProductos.forEach((producto) => {
     <p class="precio">$  ${producto.precio}</p>
     <p class="medio-pagos">${producto.medioPago}</p>    
     <div class="selectores">
-    <select name="select" class="selectorColor">
+    <select name="select" id="selectorColor" class="selectorColor">
     <option value="value0">Color</option>
     <option value="value1" class="color"> ${producto.color.NE}</option>
     <option value="value2" class="color"> ${producto.color.BL}</option>
     <option value="value3" class="color"> ${producto.color.BO}</option>
     </select> 
-    <select name="select" class="selectorTalle">
+    <select name="select" id="selectorTalle" class="selectorTalle">
     <option value="value0">Talle</option>
     <option value="value1" class="talle">${producto.talle.S}</option>
     <option value="value2" class="talle">${producto.talle.M}</option>
     <option value="value3" class="talle">${producto.talle.L}</option>
     </select> 
     </div>
-    <button id="agregar${producto.id}" class="boton-agregarCarrito">Comprar</button>   
+    <button id="agregar${producto.id}" class="boton-agregarCarrito" id="boton-agregarCarrito">Comprar</button>   
                     
 </div>`
 
     contenedorProductos.appendChild(div)
+
     const boton = document.getElementById(`agregar${producto.id}`)
     boton.addEventListener('click', () => {
+
+        swal({
+            title: "Salud!",
+            text: "Tu producto se agregó al carrito con éxito", 
+            icon: "success",
+            confirm: "ok",
+          })
 
         agregarAlCarrito(producto.id)
     })
 })
-
+  
 
 function agregarAlCarrito(id){
 
@@ -66,14 +63,10 @@ function agregarAlCarrito(id){
     let productoEnCarrito = carrito.find(item => item.id === id)
 
     if (productoEnCarrito){ 
-
         productoEnCarrito.cantidad++;
-        console.log(carrito);
-
     }else { 
         item.cantidad = 1;
         carrito.push(item)
-        console.log(carrito)
     }
     
     actualizarCarrito() 
@@ -112,8 +105,22 @@ const actualizarCarrito = () => {
 
     })
 
+   
+
     contadorCarrito.innerText = carrito.length 
     console.log(carrito)
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
-    
+
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('carrito')){
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        actualizarCarrito()
+    }
+})
+
+botonVaciar.addEventListener('click', () => {
+    carrito.length = 0
+    actualizarCarrito()
+})
