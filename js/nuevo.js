@@ -1,9 +1,7 @@
 
-const cantidad = document.getElementById('cantidad')
-const precioTotal = document.getElementById('precioTotal')
-const cantidadTotal = document.getElementById('cantidadTotal')
-
 let carrito = []
+
+// pinta las cards cargando la info del json
 
 const contenedorProductos = document.getElementById('producto-contenedor');
 
@@ -19,7 +17,7 @@ const mostrarProductos = (data) => {
     div.classList.add('card')
     div.innerHTML =  
     ` <div class="productos-item">
-    <img class="foto-remera" src=${producto.img}>
+    <img class="foto-remera" id="foto-producto" src=${producto.img}>
     <h3 class="modelo-remera">${producto.modelo}</h3>
     <p class="precio">$  ${producto.precio}</p>
     <p class="medio-pagos">${producto.medioPago}</p>    
@@ -42,15 +40,14 @@ const mostrarProductos = (data) => {
 
     contenedorProductos.appendChild(div)
 
+// selecciona producto, color, talle y cantidad
+
     const boton = document.getElementById(`agregar${producto.id}`)
     boton.addEventListener('click', () => {
 
         const colorRemera = document.querySelector(`#agregar${producto.id}`).parentElement.querySelector('#selectorColor').value;
-        const talleRemera = document.querySelector(`#agregar${producto.id}`).parentElement.querySelector('#selectorTalle').value;
-     
+        const talleRemera = document.querySelector(`#agregar${producto.id}`).parentElement.querySelector('#selectorTalle').value;  
         const cantRemera = document.querySelector(`#agregar${producto.id}`).parentElement.querySelector('#selectorCantidad').value;
-        console.log(cantRemera);
-
 
         console.log(colorRemera, talleRemera, cantRemera);
 
@@ -60,11 +57,13 @@ const mostrarProductos = (data) => {
             icon: "success",
             confirm: "ok",
           })
-
         agregarAlCarrito(producto.id, colorRemera, talleRemera, cantRemera)
     })
 });
 }
+
+
+// agregando al carrito producto (color, talle y cantidad)
 
 function agregarAlCarrito(id, colorRemera, talleRemera, cantRemera){
 
@@ -82,30 +81,18 @@ function agregarAlCarrito(id, colorRemera, talleRemera, cantRemera){
         if (productoEnCarrito){ 
             productoEnCarrito.cantidad++
         }else { 
-
             carrito.push(item)
-        }
-        
+        }        
         actualizarCarrito() 
     })
 }
 
-
-const eliminarDelCarrito = (id) => {
-
-    const item = carrito.find((prod) => prod.id === id)
-
-    const indice = carrito.indexOf(item)
-    carrito.splice(indice, 1) 
-    actualizarCarrito() 
-    console.log(carrito)
-
-
-}
-
 const contenedorCarrito = document.getElementById('carrito-contenedor')
-
 const contadorCarrito = document.getElementById('contadorCarrito')
+const precioTotal = document.getElementById('precioTotal')
+
+
+// pinta los elementos seleccionados en el modulo carrito
 
 const actualizarCarrito = () => {
 
@@ -116,14 +103,17 @@ const actualizarCarrito = () => {
         div.className = ('productoEnCarrito')
         div.innerHTML = `
 
-        <img src="${prod.img}" class="imgModal">
-        <div>
+        <img src="${prod.img}"class="imgModal">
+        <div class="modal-parrafo1">
         <p><b>Modelo:</b> ${prod.modelo}</p>
         <p><b>Color:</b> ${prod.color}</p>
         <p><b>Talle:</b> ${prod.talle}</p>
         </div>
-        <p><b>Precio:</b> $ ${prod.precio}</p>
+        <div class="modal-parrafo2">
         <p><b>Cantidad:</b> ${prod.cantidad}</p>
+        <p><b>Precio por unidad:</b><br> $ ${prod.precio}</p>
+
+        </div>
         <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><img src="./img/trash-can-solid.png" class="icono-basura"></button>
         `
 
@@ -145,6 +135,21 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarCarrito()
     }
 })
+
+// eliminando productos seleccionados del carrito
+
+const eliminarDelCarrito = (id) => {
+
+    const item = carrito.find((prod) => prod.id === id)
+
+    const indice = carrito.indexOf(item)
+    carrito.splice(indice, 1) 
+    actualizarCarrito() 
+
+    localStorage.removeItem(prod.id);
+}
+
+// vaciar el carrito de forma total
 
 const botonVaciar = document.getElementById('vaciar-carrito')
 
@@ -171,4 +176,6 @@ botonVaciar.addEventListener('click', () => {
 
     carrito.length = 0
     actualizarCarrito()
+
+    localStorage.removeItem('carrito');
 })

@@ -300,6 +300,7 @@ h2 {
           padding: 20px;
           margin-top: -100%;
           transition: all .5s;
+          border-radius: 5px;
       }
       .modal-active .modal-carrito {
           margin-top: 0;
@@ -464,6 +465,13 @@ h2 {
       width: 50px;
       height: 50px;
       align-self: center;
+      flex-basis: 50px;
+    }
+    .modal-parrafo1{
+      flex-basis: 180px;
+    }
+    .modal-parrafo2{
+      flex-basis: 120px;
     }
     .swal-overlay {
       background-color: #47454563;
@@ -688,7 +696,51 @@ h2 {
               font-size: 12px; }
             form {
               padding-left: 8px;
-              padding-right: 0px; } }
+              padding-right: 0px; } 
+
+            .modal-carrito {
+                min-width: 300px;
+            }
+            .modal-carrito h3 {
+              font-size: 18px;
+              margin-top: 30px;
+              text-align: left;
+            }
+            .modal-carrito #carritoCerrar {
+                top: 10px;
+            }
+            .modal-carrito .precioProducto {
+                font-size: 15px;
+                text-align: left;
+            }
+            .productoEnCarrito {
+                border-radius: 3px;
+                background-color: #f0e3a5 ;
+                margin: 5px 0;
+                padding: 5px 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            } 
+            .productoEnCarrito:hover {
+                border-left: 5px solid #920605 ;
+            } 
+            .imgModal{
+              display: none;
+            }
+            .boton-eliminar{
+              flex-basis: min-content;
+            }
+            .modal-parrafo1{
+              flex-basis: 170px;
+            }
+            .modal-parrafo2{
+              flex-basis: 80px;
+            }
+         
+            }
+          
 
               
 
